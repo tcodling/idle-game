@@ -6,7 +6,20 @@ import Store from './Store'
 class App extends React.Component {
   state = {
     points: 0,
-    pointsPerClick: 1
+    pointsPerClick: 1,
+    pointsPerSecond: 0
+  }
+
+  componentDidMount = () => {
+    this.interval = setInterval(() => {
+      this.setState({
+        points: this.state.points + this.state.pointsPerSecond
+      })
+    }, 1000)
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
 
   increment = () => {
