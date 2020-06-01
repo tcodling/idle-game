@@ -2,7 +2,11 @@ import React from 'react'
 
 function Store(props) {
     return (
-        <div onClick={props.click} id='store'>Store + 1</div>
+        <div id='store'>
+            <div onClick={props.click}>Upgrade A</div>
+            <div>Upgrade B</div>
+            <div>Upgrade C</div>
+        </div>
     )
 }
 
