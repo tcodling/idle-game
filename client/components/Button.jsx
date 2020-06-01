@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Button() {
+function Button(props) {
     return (
-        <div id='button'>button</div>
+        <div onClick={props.click} id='button'>button</div>
     )
 }
 
