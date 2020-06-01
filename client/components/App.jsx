@@ -15,11 +15,29 @@ class App extends React.Component {
     })
   }
 
-  upgrade = () => {
-    this.setState({
-      points: this.state.points - 10,
-      pointsPerClick: this.state.pointsPerClick + 1
-    })
+  upgrade = (event) => {
+    let type = event.target.innerHTML
+    let increase
+    switch (type) {
+      case 'Upgrade A':
+        increase = 1
+        break
+      case 'Upgrade B':
+        increase = 2
+        break
+      case 'Upgrade C':
+        increase = 3
+        break
+    }
+
+    if (this.state.points - (increase * 10) >= 0) {
+      this.setState({
+        points: this.state.points - (increase * 10),
+        pointsPerClick: this.state.pointsPerClick + increase
+      })
+    } else {
+      alert('not enough points')
+    }
   }
 
   render() {
