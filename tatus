@@ -1,0 +1,35 @@
+[33mcommit e38cae2ee56c324083e6de84c33de05a9e624912[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: tcodling <thomas.codling@outlook.com>
+Date:   Mon Jun 1 15:30:02 2020 +1200
+
+    stop from buying upgrades when not enough points
+
+[33mcommit c9b2d03e046eee8546cc0e6a4765e447aa69eff1[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: tcodling <thomas.codling@outlook.com>
+Date:   Mon Jun 1 15:20:09 2020 +1200
+
+    add some style
+
+[33mcommit 4ea333aa789810bfc65ebcf1578ab0fdd67cfc36[m
+Author: tcodling <thomas.codling@outlook.com>
+Date:   Mon Jun 1 15:01:22 2020 +1200
+
+    add upgrade function
+
+[33mcommit 3ca095fe0a53392044286d6a1692724e22ce96ee[m
+Author: tcodling <thomas.codling@outlook.com>
+Date:   Mon Jun 1 14:54:50 2020 +1200
+
+    get increment function working
+
+[33mcommit d64ceb430f84cf2c27232320d7ef78ca3e2fe0fa[m
+Author: tcodling <thomas.codling@outlook.com>
+Date:   Mon Jun 1 14:50:30 2020 +1200
+
+    setup button component
+
+[33mcommit aa889c9c9f63da375764f41f5c0141b2af935f5d[m
+Author: Thomas Codling <58054247+tcodling@users.noreply.github.com>
+Date:   Mon Jun 1 14:44:48 2020 +1200
+
+    Initial commit

@@ -19,13 +19,13 @@ class App extends React.Component {
     let type = event.target.innerHTML
     let increase
     switch (type) {
-      case 'Upgrade A':
+      case 'Beanie $10':
         increase = 1
         break
-      case 'Upgrade B':
+      case 'Sneakers $20':
         increase = 2
         break
-      case 'Upgrade C':
+      case 'Jeans $30':
         increase = 3
         break
     }
@@ -44,8 +44,8 @@ class App extends React.Component {
     return (
       <>
       <h1>Point Collector</h1>
-      <h2>Points: {this.state.points}</h2>
-      <h2>Points per click: {this.state.pointsPerClick}</h2>
+      <h2>${this.state.points}</h2>
+      <h2>Dollars per click: {this.state.pointsPerClick}</h2>
       <div id='mainContainer'>
         <Button click={this.increment} />
         <Store click={this.upgrade} />
