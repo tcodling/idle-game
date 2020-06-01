@@ -22,7 +22,7 @@ body {
     margin-right: 5px;
 }
 
-#store {
+.store {
     background-color: green;
     border-radius: 10px;
     color: white;
@@ -30,14 +30,16 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 5px;
+    margin: 0 5px;
+    padding: 10px;
 }
 
-#store div {
+.store h4 {
     margin: 5px;
+    text-decoration: underline;
 }
 
-#store div:hover, #button:hover {
+.store div:hover, #button:hover {
     color: yellow;
     cursor: pointer;
 }
