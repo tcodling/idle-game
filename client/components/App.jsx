@@ -2,7 +2,6 @@ import React from 'react'
 
 import Button from './Button'
 import Store from './Store'
-import Store2 from './Store2'
 
 class App extends React.Component {
   state = {
@@ -87,9 +86,8 @@ class App extends React.Component {
       <h2>Dollars per click: {this.state.pointsPerClick}</h2>
       <h2>Dollars per second: {this.state.pointsPerSecond}</h2>
       <div id='mainContainer'>
-        <Store click={this.upgradeClick} />
         <Button click={this.increment} />
-        <Store2 click={this.upgradePerSecond} />
+        <Store upSecond={this.upgradePerSecond} upClick={this.upgradeClick} />
       </div>
       </>
     )
