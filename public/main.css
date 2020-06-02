@@ -5,6 +5,13 @@ body {
     font-family: 'Fredoka One', cursive;
 }
 
+button {
+    font-family: 'Fredoka One', cursive;
+    background-color: transparent;
+    border: 0;
+    color: white;
+}
+
 #mainContainer {
     display: flex;
     justify-content: center;
@@ -39,7 +46,7 @@ body {
     text-decoration: underline;
 }
 
-.store div:hover, #button:hover {
+.store button:hover, #button:hover {
     color: yellow;
     cursor: pointer;
 }

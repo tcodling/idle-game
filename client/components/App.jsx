@@ -30,16 +30,16 @@ class App extends React.Component {
   }
 
   upgradeClick = (event) => {
-    let type = event.target.innerHTML
+    let type = event.target.value
     let increase
     switch (type) {
-      case 'Beanie $10':
+      case 'beanie':
         increase = 1
         break
-      case 'Sneakers $20':
+      case 'sneakers':
         increase = 2
         break
-      case 'Jeans $30':
+      case 'jeans':
         increase = 3
         break
     }
@@ -55,16 +55,16 @@ class App extends React.Component {
   }
 
   upgradePerSecond = () => {
-    let type = event.target.innerHTML
+    let type = event.target.value
     let increase
     switch (type) {
-      case 'Paper Run $10':
+      case 'paper':
         increase = 1
         break
-      case 'Cleaner $20':
+      case 'cleaner':
         increase = 2
         break
-      case 'Checkout Operator $30':
+      case 'checkout':
         increase = 3
         break
     }
@@ -84,8 +84,8 @@ class App extends React.Component {
       <>
       <h1>Money Collector</h1>
       <h2>${this.state.points}</h2>
-      <h2>$ per click: {this.state.pointsPerClick}</h2>
-      <h2>$ per second: {this.state.pointsPerSecond}</h2>
+      <h2>Dollars per click: {this.state.pointsPerClick}</h2>
+      <h2>Dollars per second: {this.state.pointsPerSecond}</h2>
       <div id='mainContainer'>
         <Store click={this.upgradeClick} />
         <Button click={this.increment} />
