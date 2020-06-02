@@ -2,6 +2,7 @@ import React from 'react'
 
 import Button from './Button'
 import Store from './Store'
+import Avatar from './Avatar'
 
 class App extends React.Component {
   state = {
@@ -48,7 +49,7 @@ class App extends React.Component {
         cost = 30
         break
 
-//   PER SECOND UPGRADES
+      // PER SECOND UPGRADES
       case 'paper':
         secondIncrease = 1
         cost = 10
@@ -82,6 +83,7 @@ class App extends React.Component {
       <h2>Dollars per click: {this.state.pointsPerClick}</h2>
       <h2>Dollars per second: {this.state.pointsPerSecond}</h2>
       <div id='mainContainer'>
+        <Avatar />
         <Button click={this.increment} />
         <Store click={this.upgrade} />
       </div>
