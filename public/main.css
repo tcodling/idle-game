@@ -50,3 +50,18 @@ button {
     color: yellow;
     cursor: pointer;
 }
+
+#board {
+    border: 2px black solid;
+}
+
+#board td {
+    border: 1px rgb(182, 178, 178) solid;
+    height: 5vh;
+    width: 5vh;
+}
+
+#board td:hover {
+    background-color: rgb(182, 178, 178);
+    cursor: pointer;
+}
