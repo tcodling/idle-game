@@ -28,50 +28,46 @@ class App extends React.Component {
     })
   }
 
-  upgradeClick = (event) => {
+  upgrade = (event) => {
     let type = event.target.value
-    let increase
+    let pointIncrease
+    let secondIncrease
+    let cost
     switch (type) {
+      // CLICK UPGRADES
       case 'beanie':
-        increase = 1
+        pointIncrease = 1
+        cost = 10
         break
       case 'sneakers':
-        increase = 2
+        pointIncrease = 2
+        cost = 20
         break
       case 'jeans':
-        increase = 3
+        pointIncrease = 3
+        cost = 30
         break
-    }
 
-    if (this.state.points - (increase * 10) >= 0) {
-      this.setState({
-        points: this.state.points - (increase * 10),
-        pointsPerClick: this.state.pointsPerClick + increase
-      })
-    } else {
-      alert('not enough points')
-    }
-  }
-
-  upgradePerSecond = () => {
-    let type = event.target.value
-    let increase
-    switch (type) {
+//   PER SECOND UPGRADES
       case 'paper':
-        increase = 1
+        secondIncrease = 1
+        cost = 10
         break
       case 'cleaner':
-        increase = 2
+        secondIncrease = 2
+        cost = 20
         break
       case 'checkout':
-        increase = 3
+        secondIncrease = 3
+        cost = 30
         break
     }
 
-    if (this.state.points - (increase * 10) >= 0) {
+    if (this.state.points - (cost) >= 0) {
       this.setState({
-        points: this.state.points - (increase * 10),
-        pointsPerSecond: this.state.pointsPerSecond + increase
+        points: this.state.points - (cost),
+        pointsPerClick: this.state.pointsPerClick + pointIncrease,
+        pointsPerSecond: this.state.pointsPerSecond + secondIncrease
       })
     } else {
       alert('not enough points')
@@ -87,7 +83,7 @@ class App extends React.Component {
       <h2>Dollars per second: {this.state.pointsPerSecond}</h2>
       <div id='mainContainer'>
         <Button click={this.increment} />
-        <Store upSecond={this.upgradePerSecond} upClick={this.upgradeClick} />
+        <Store click={this.upgrade} />
       </div>
       </>
     )
