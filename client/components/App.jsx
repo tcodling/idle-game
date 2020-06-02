@@ -84,8 +84,9 @@ class App extends React.Component {
       <h2>Dollars per second: {this.state.pointsPerSecond}</h2>
       <div id='mainContainer'>
         {/* <Button click={this.increment} /> */}
+        <Store jobs={true} click={this.upgrade} />
         <Board />
-        <Store click={this.upgrade} />
+        <Store jobs={false} click={this.upgrade} />
       </div>
       </>
     )
