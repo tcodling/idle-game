@@ -52,6 +52,11 @@ button {
     cursor: pointer;
 }
 
+.store button:focus {
+    outline: none;
+    border: none;
+}
+
 #board {
     border: 2px black solid;
 }
