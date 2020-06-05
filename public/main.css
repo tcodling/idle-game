@@ -58,16 +58,23 @@ button {
 }
 
 #board {
-    border: 2px black solid;
+    /* border: 2px black solid; */
+    background-color: bisque;
+    display: flex;
+    flex-wrap: wrap;
+    width: 40vh;
+    height: 40vh;
 }
 
-#board td {
-    border: 1px rgb(182, 178, 178) solid;
+.square {
+    outline: 0.2px rgb(182, 178, 178) solid;
     height: 5vh;
     width: 5vh;
+    padding: 0;
+    margin: 0;
 }
 
-#board td:hover {
+.square:hover {
     background-color: rgb(182, 178, 178);
     cursor: pointer;
 }

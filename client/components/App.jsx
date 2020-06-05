@@ -4,6 +4,8 @@ import React from 'react'
 import Store from './Store'
 import Board from './Board'
 
+import {observe} from '../game.js'
+
 class App extends React.Component {
   state = {
     points: 0,
@@ -85,7 +87,10 @@ class App extends React.Component {
       <div id='mainContainer'>
         {/* <Button click={this.increment} /> */}
         <Store jobs={true} click={this.upgrade} />
-        <Board />
+        {observe(itemPosition => {
+          return <Board itemPosition={itemPosition} />
+        })}
+        {/* <Board itemPosition={[0, 1]} /> */}
         <Store jobs={false} click={this.upgrade} />
       </div>
       </>
