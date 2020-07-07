@@ -1,22 +1,24 @@
 import React from 'react'
 
 import Button from './Button'
+import Progress from './Progress'
 import Store from './Store'
 
 
 class App extends React.Component {
   state = {
-    points: 0,
-    pointsPerClick: 1,
+    points: 10,
+    progress: 0,
+    progressPerClick: 1,
     pointsPerSecond: 0
   }
 
   componentDidMount = () => {
     this.interval = setInterval(() => {
       this.setState({
-        points: this.state.points + this.state.pointsPerSecond
+        points: this.state.points + this.state.pointsPerSecond / 10
       })
-    }, 1000)
+    }, 100)
   }
 
   componentWillUnmount() {
@@ -25,49 +27,50 @@ class App extends React.Component {
 
   increment = () => {
     this.setState({
-      points: this.state.points + this.state.pointsPerClick
+      progress: this.state.progress + this.state.progressPerClick
     })
   }
 
   upgrade = (event) => {
     let type = event.target.value
-    let pointIncrease = 0
+    let progressIncrease = 0
     let secondIncrease = 0
     let cost
     switch (type) {
       // CLICK UPGRADES
-      case 'paper':
-        pointIncrease = 1
+      case 'mud':
+        progressIncrease = 1
         cost = 10
         break
-      case 'cleaner':
-        pointIncrease = 2
+      case 'wood':
+        progressIncrease = 2
         cost = 20
         break
-      case 'checkout':
-        pointIncrease = 3
+      case 'metal':
+        progressIncrease = 3
         cost = 30
         break
 
       // PER SECOND UPGRADES
-      case 'plant1':
+      case 'paper':
         secondIncrease = 1
         cost = 10
         break
-      case 'plant2':
+      case 'cleaner':
         secondIncrease = 2
         cost = 20
         break
-      case 'plant3':
+      case 'checkout':
         secondIncrease = 3
         cost = 30
         break
     }
 
     if (this.state.points - (cost) >= 0) {
+      console.log(progressIncrease)
       this.setState({
         points: this.state.points - (cost),
-        pointsPerClick: this.state.pointsPerClick + pointIncrease,
+        progressPerClick: this.state.progressPerClick + progressIncrease,
         pointsPerSecond: this.state.pointsPerSecond + secondIncrease
       })
     } else {
@@ -79,14 +82,15 @@ class App extends React.Component {
     return (
       <>
       <h1>Cash Grabber</h1>
-      <h2>${this.state.points}</h2>
-      <h2>Dollars per click: {this.state.pointsPerClick}</h2>
+      <h2>${this.state.points.toFixed(2)}</h2>
+      <h2>Build speed: {this.state.progressPerClick}</h2>
       <h2>Dollars per second: {this.state.pointsPerSecond}</h2>
       <div id='mainContainer'>
         <Store jobs={true} click={this.upgrade} />
         <Button click={this.increment} />
         <Store jobs={false} click={this.upgrade} />
       </div>
+      <Progress percent={this.state.progress} />
       </>
     )
   }

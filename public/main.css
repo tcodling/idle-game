@@ -78,3 +78,8 @@ button {
     background-color: rgb(182, 178, 178);
     cursor: pointer;
 }
+
+#progress {
+    display: flex;
+    justify-content: center;
+}

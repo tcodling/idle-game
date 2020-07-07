@@ -12,10 +12,10 @@ function Store(props) {
         </div>
         ) : (
         <div className='store'>
-        <h4>Plant Store</h4>
-            <button value='plant1' onClick={props.click}>plant1 $10</button>
-            <button value='plant2' onClick={props.click}>plant2 $20</button>
-            <button value='plant3' onClick={props.click}>plant3 $30</button>
+        <h4>Materials</h4>
+            <button value='mud' onClick={props.click}>Mud $10</button>
+            <button value='wood' onClick={props.click}>Wood $20</button>
+            <button value='metal' onClick={props.click}>Metal $30</button>
         </div>
         )}
         </>
