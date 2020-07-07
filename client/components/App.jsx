@@ -1,15 +1,13 @@
 import React from 'react'
 
-// import Button from './Button'
+import Button from './Button'
 import Store from './Store'
-import Board from './Board'
 
-import {observe} from '../game.js'
 
 class App extends React.Component {
   state = {
     points: 0,
-    // pointsPerClick: 1,
+    pointsPerClick: 1,
     pointsPerSecond: 0
   }
 
@@ -25,31 +23,31 @@ class App extends React.Component {
     clearInterval(this.interval);
   }
 
-  // increment = () => {
-  //   this.setState({
-  //     points: this.state.points + this.state.pointsPerClick
-  //   })
-  // }
+  increment = () => {
+    this.setState({
+      points: this.state.points + this.state.pointsPerClick
+    })
+  }
 
   upgrade = (event) => {
     let type = event.target.value
-    // let pointIncrease
-    let secondIncrease
+    let pointIncrease = 0
+    let secondIncrease = 0
     let cost
     switch (type) {
       // CLICK UPGRADES
-      // case 'beanie':
-      //   pointIncrease = 1
-      //   cost = 10
-      //   break
-      // case 'sneakers':
-      //   pointIncrease = 2
-      //   cost = 20
-      //   break
-      // case 'jeans':
-      //   pointIncrease = 3
-      //   cost = 30
-      //   break
+      case 'paper':
+        pointIncrease = 1
+        cost = 10
+        break
+      case 'cleaner':
+        pointIncrease = 2
+        cost = 20
+        break
+      case 'checkout':
+        pointIncrease = 3
+        cost = 30
+        break
 
       // PER SECOND UPGRADES
       case 'plant1':
@@ -69,7 +67,7 @@ class App extends React.Component {
     if (this.state.points - (cost) >= 0) {
       this.setState({
         points: this.state.points - (cost),
-        // pointsPerClick: this.state.pointsPerClick + pointIncrease,
+        pointsPerClick: this.state.pointsPerClick + pointIncrease,
         pointsPerSecond: this.state.pointsPerSecond + secondIncrease
       })
     } else {
@@ -80,17 +78,13 @@ class App extends React.Component {
   render() {
     return (
       <>
-      <h1>House of Plants</h1>
+      <h1>Cash Grabber</h1>
       <h2>${this.state.points}</h2>
-      {/* <h2>Dollars per click: {this.state.pointsPerClick}</h2> */}
+      <h2>Dollars per click: {this.state.pointsPerClick}</h2>
       <h2>Dollars per second: {this.state.pointsPerSecond}</h2>
       <div id='mainContainer'>
-        {/* <Button click={this.increment} /> */}
         <Store jobs={true} click={this.upgrade} />
-        {observe(itemPosition => {
-          return <Board itemPosition={itemPosition} />
-        })}
-        {/* <Board itemPosition={[0, 1]} /> */}
+        <Button click={this.increment} />
         <Store jobs={false} click={this.upgrade} />
       </div>
       </>
